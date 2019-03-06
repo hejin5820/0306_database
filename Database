@@ -36,7 +36,7 @@
 * SQL Server
 * DB2
 * SQLite（lite：小，手机里都是用的这个）
-    * [http://www.runoob.com/sqlite/sqqlite-tutorial.html](http://www.runoob.com/sqlite/sqqlite-tutorial.html)
+    * [http://www.runoob.com/sqlite/sqlite-tutorial.html](http://www.runoob.com/sqlite/sqlite-tutorial.html)
         * SQLite 教程
         * SQLite 简介
         * SQLite 安装
@@ -46,4 +46,86 @@
         * SQLite 创建数据库
 * no-sql
 
-#### MySQL
+#### MySQL Install
+
+1. unzip 
+
+2. creat my.ini
+
+3. 命令行执行命令的注意事项
+   * 这个命令的作用？
+   * 这个命令在哪执行？
+   * 这个命令的执行方式 （可变部分和不可变部分）
+
+4. cmd（以管理员身份运行）
+
+   * C:\WINDOWS\system32>f:
+
+   * F:\>cd mysql
+
+   * F:\Mysql>cd mysql
+
+   * F:\Mysql\mysql>cd bin
+
+   * F:\Mysql\mysql\bin>mysqld --initialize --user=mysql --console
+     （出来warning没有关系）
+     （保存密码： k3KBKyMjQa.d）
+
+     
+
+   * F:\Mysql\mysql\bin>net start mysql
+     mysql 服务正在启动 .
+     mysql 服务已经启动成功。
+
+5. 安装服务cmd
+   * F:\Mysql\mysql\bin>mysqld --install mysql --defaults-file="f:/mysql/mysql/my.ini"
+     Service successfully installed.
+
+6. 启动MySql cmd
+   * F:\Mysql\mysql\bin>net start mysql
+     mysql 服务正在启动 .
+     mysql 服务已经启动成功。
+
+7. 删除服务 cmd
+
+   * sc delete your_mysql_service_name
+
+8. 登录 Mysql cmd
+
+   * F:\Mysql\mysql\bin>mysql -uroot -p（输入密码）
+     Enter password: ************
+     Welcome to the MySQL monitor.  Commands end with ; or \g.
+     Your MySQL connection id is 2
+     Server version: 5.7.25
+
+     Copyright (c) 2000, 2019, Oracle and/or its affiliates. All rights reserved.
+
+     Oracle is a registered trademark of Oracle Corporation and/or its
+     affiliates. Other names may be trademarks of their respective
+     owners.
+
+     Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+9. 修改密码
+   * mysql> set password=password('system');
+     Query OK, 0 rows affected, 1 warning (0.00 sec)
+
+10. 退出Mysql cmd
+    * mysql> exit
+      Bye
+
+11. 检查配置 cmd
+
+    * 利用修改后的密码登录（system）
+
+    * F:\Mysql\mysql\bin>mysql -uroot -p
+      Enter password: ******
+      Welcome to the MySQL monitor.  Commands end with ; or \g.
+
+    * mysql> show variables like 'char%';
+
+      出现一个表格大多数都是utf8mb4，就表示正确
+
+    * mysql> show variables like 'coll%';
+
+      出现一个表格大多数都是utf8mb4，就表示正确
