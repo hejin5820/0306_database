@@ -1,0 +1,49 @@
+# 0306
+
+## 数据库：Database
+
+软件：ideaIU：最突出的功能自然是调试(Debug)，可以对Java代码，JavaScript，JQuery,Ajax等技术进行调试。其他编辑功能抛开不看，这点远胜Eclipse。
+
+软件：webstrom：是[jetbrains](https://baike.so.com/doc/5381594-5617929.html)公司旗下一款JavaScript 开发工具。目前已经被广大中国JS开发者誉为"Web前端开发神器"、"最强大的HTML5编辑器"、"最智能的JavaScript IDE"等。与IntelliJ IDEA同源，继承了IntelliJ IDEA强大的JS部分的功能。
+
+都可以同步到GitHub网站
+
+### Data
+
+* 文本 
+* 图像
+* 音频
+* 视频
+
+### 数据管理技术的发展
+
+* 人工管理阶段
+* 文件管理阶段
+  * 数据不能共享
+  * 超大规模并发（同一个时间点访问数据库的人数可以很多）
+  * 超大规模数据（存储信息的数据量， KB-MB-GB-TB-PB）
+* 数据库管理阶段
+  * 1970s
+  * Oracle
+  * 不善于超大规模并发（例如双11,12306购票）
+  * 不善于超大规模数据
+
+### RDBMS(关系数据库管理系统)
+
+* DataBase Management System
+* Orcale
+* MySQL
+* SQL Server
+* DB2
+* SQLite（lite：小，手机里都是用的这个）
+    * [http://www.runoob.com/sqlite/sqqlite-tutorial.html](http://www.runoob.com/sqlite/sqqlite-tutorial.html)
+        * SQLite 教程
+        * SQLite 简介
+        * SQLite 安装
+        * SQLite 命令
+        * SQLite 语法
+        * SQLite 数据类型
+        * SQLite 创建数据库
+* no-sql
+
+#### MySQL
