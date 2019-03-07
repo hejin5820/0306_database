@@ -10,6 +10,7 @@ create table db_school.student(
   Id int auto_increment primary key comment 'id pk',
 #auto_increament自动增加
   sno varchar(255) unique comment '学号',
+  gender varchar(255) default 'male' comment '性别',
   name varchar(10) comment '学生姓名',
   age int(2) comment '年龄',
   height double(3,2) comment '身高',
@@ -18,10 +19,12 @@ create table db_school.student(
 ) comment '学生表';
 select * from db_school.student;
 desc db_school.student;-- desc:describe
+alter table db_school.student auto_increment=20;
 
-insert into db_school.student value (null,'1901','LIly',21,1.70,'1998-03-04',1);
-insert into db_school.student value (null,'1902','Tom',22,1.71,'1997-04-14',2);
-insert into db_school.student value (null,'1903','MaSu',21,1.58,'1998-05-25',3);
+insert into db_school.student value (null,'1901','male','LIly',21,1.70,'1998-03-04',1);
+insert into db_school.student value (null,'1902',null,'Tom',22,1.71,'1997-04-14',2);
+insert into db_school.student value (null,'1903',null,'MaSu',21,1.58,'1998-05-25',3);
+insert into db_school.student(sno,name,age,height) value ('1904','xiao',21,1.80);
 
 update db_school.student
 set  dob='2000-4-1'
@@ -43,16 +46,24 @@ select * from db_school.department;
 #为学生增加外界约束
 alter table db_school.student
   add constraint
-    student_fk_departmentId   #自己取的
-    foreign key (departmentId)
-      references db_school.department (id);
+    student_fk_departmentId   #自己取的  表名+fk（外界）+列名
+    foreign key (departmentId)     # 外界约束
+      references db_school.department (id);# 引用
 
 desc db_school.student;-- desc:describe
 
+delete from db_school.department
+where Id=2;
+# 在上面学生使用了这个Id所以不能删除，可以删除学生没有选的院系
+# 同样的想要删除院系表，因为学生表有用院系表，所以不能删除
 select  s.name,d.title
 from db_school.student s
 inner join db_school.department d
 on d.id=s.departmentId;
 
+set foreign_key_checks =1;#临时禁用外界约束，接下来就可以删除表格了 =1就是启用了
+-- view Toolwindows
+drop table db_school.student;
+drop table db_school.department;
 drop database db_school;
 show databases ;

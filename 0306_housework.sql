@@ -31,16 +31,6 @@ insert into db_school.course value (null,'chinese','Mr Li');
 insert into db_school.course value (null,'English','Mr Xue');
 select * from db_school.course;
 
-create table db_school.sc(
-   sn varchar(20) comment '学生姓名',
-   title varchar(20) comment '课程内容',
-   teacher varchar(20) comment '教师名字'
-) comment '选课';
-insert into db_school.sc value ('LIly','math','Mr wang');
-insert into db_school.sc value ('Tom','chinese','Mr Li');
-insert into db_school.sc value ('MaSu','English','Mr Xue');
-select * from db_school.sc;
-
 alter table db_school.student
   add constraint
 student_fk_courseId
@@ -53,3 +43,4 @@ inner join db_school.course c
 on  c.id =s.courseId;
 
 drop database db_school;
+
