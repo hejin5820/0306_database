@@ -31,11 +31,11 @@ DROP TABLE IF EXISTS `dept`;
 /*!40101 SET @saved_cs_client = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `dept` (
-                      `DEPTNO` INT(2) NOT NULL,
-                      `DNAME`  VARCHAR(14) DEFAULT NULL,
-                      `LOC`    VARCHAR(13) DEFAULT NULL,
+                      `DEPTNO` INT(2) NOT NULL comment '部门编号',
+                      `DNAME`  VARCHAR(14) DEFAULT NULL comment '部门名称',
+                      `LOC`    VARCHAR(13) DEFAULT NULL comment '地点',
                       PRIMARY KEY (`DEPTNO`)
-)
+) comment '部门表'
   ENGINE = InnoDB
   DEFAULT CHARSET = utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -61,18 +61,18 @@ DROP TABLE IF EXISTS `emp`;
 /*!40101 SET @saved_cs_client = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `emp` (
-                     `EMPNO`    INT(4) NOT NULL,
-                     `ENAME`    VARCHAR(10)  DEFAULT NULL,
-                     `JOB`      VARCHAR(9)   DEFAULT NULL,
-                     `MGR`      INT(4)       DEFAULT NULL,
-                     `HIREDATE` DATE         DEFAULT NULL,
-                     `SAL`      DOUBLE(7, 2) DEFAULT NULL,
-                     `COMM`     DOUBLE(7, 2) DEFAULT NULL,
-                     `DEPTNO`   INT(2)       DEFAULT NULL,
+                     `EMPNO`    INT(4) NOT NULL comment '员工号',
+                     `ENAME`    VARCHAR(10)  DEFAULT NULL comment '员工姓名',
+                     `JOB`      VARCHAR(9)   DEFAULT NULL comment '工作',
+                     `MGR`      INT(4)       DEFAULT NULL comment '上级编号',
+                     `HIREDATE` DATE         DEFAULT NULL comment '受雇日期',
+                     `SAL`      DOUBLE(7, 2) DEFAULT NULL comment '薪金',
+                     `COMM`     DOUBLE(7, 2) DEFAULT NULL comment '奖金',
+                     `DEPTNO`   INT(2)       DEFAULT NULL comment '部门编号',
                      PRIMARY KEY (`EMPNO`),
                      KEY `FK_emp_deptno` (`DEPTNO`),
                      CONSTRAINT `FK_emp_deptno` FOREIGN KEY (`DEPTNO`) REFERENCES `dept` (`DEPTNO`)
-)
+) comment '员工表'
   ENGINE = InnoDB
   DEFAULT CHARSET = utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -109,9 +109,9 @@ DROP TABLE IF EXISTS `salgrade`;
 /*!40101 SET @saved_cs_client = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `salgrade` (
-                          `GRADE` INT(11) DEFAULT NULL,
-                          `LOSAL` INT(11) DEFAULT NULL,
-                          `HISAL` INT(11) DEFAULT NULL
+  `GRADE` INT(11) DEFAULT NULL comment '工资等级',
+  `LOSAL` INT(11) DEFAULT NULL comment '此等级最低工资',
+  `HISAL` INT(11) DEFAULT NULL comment '此等级最高工资'
 )
   ENGINE = InnoDB
   DEFAULT CHARSET = utf8;
@@ -142,4 +142,8 @@ UNLOCK TABLES;
 
 show tables from scott;
 select *
-from scott.dept;
+from  scott.emp;
+select *
+from  scott.dept;
+select *
+from  scott.salgrade;
