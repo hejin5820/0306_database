@@ -1,5 +1,5 @@
 show databases ;
-show tables from db_school;
+# show tables from db_school;
 
 drop database if exists db_school;
 create database db_school;
@@ -61,9 +61,9 @@ from db_school.student s
 inner join db_school.department d
 on d.id=s.departmentId;
 
-set foreign_key_checks =1;#临时禁用外界约束，接下来就可以删除表格了 =1就是启用了
--- view Toolwindows
-drop table db_school.student;
-drop table db_school.department;
-drop database db_school;
-show databases ;
+# set foreign_key_checks =1;#临时禁用外界约束，接下来就可以删除表格了 =1就是启用了
+# -- view Toolwindows
+# drop table db_school.student;
+# drop table db_school.department;
+# drop database db_school;
+# show databases ;

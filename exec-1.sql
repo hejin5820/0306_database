@@ -9,8 +9,10 @@ select * from scott.emp where COMM>SAL*0.3;
 # 5. 希望看到 10 部门的经理或者 20 部门的职员 clerk 的信息
 select * from scott.emp where DEPTNO = 10 and JOB='MANAGER' or deptno = 20 and job = 'CLERK';
 # 6. 找出 10 部门的经理、20 部门的职员或者既不是经理也不是职员但是高于 2000 元的员工信息
-select * from scott.emp where DEPTNO=10 and JOB='MANAGER' or DEPTNO=20 and JOB='clerk' or
-                              JOB!='manager' and JOB!='clerk' and SAL>2000;
+select *
+from scott.emp
+where DEPTNO=10 and JOB='MANAGER' or DEPTNO=20 and
+                                     JOB='clerk' or JOB!='manager' and JOB!='clerk' and SAL>2000;
 # 7. 找出获得奖金的员工的工作
 select * from scott.emp where COMM!=0;
 # 8. 找出奖金少于 100 或者没有获得奖金的员工的信息
@@ -28,6 +30,9 @@ select * from scott.emp where ENAME not like 'R%';
 # 14. 找出员工名字的前3个字符
 
 # 15. 将名字中 A 改为 a
+update scott.emp
+set ENAME='a'
+where ENAME='%A%';
 # 16. 将员工的雇佣日期拖后 10 年
 # 17. 返回员工的详细信息并按姓名排序
 select * from scott.emp order by ename asc;
