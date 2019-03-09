@@ -11,7 +11,7 @@ drop table db_school.student;
 select empno,hiredate  -- 查询语句的投影操作
 from scott.emp;
 
-select distinct job from scott.emp;
+select distinct job from scott.emp;-- distinct的目的是删除相同的行
 select *
 from scott.emp
 # where SAL>2000 ;
