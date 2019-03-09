@@ -11,10 +11,10 @@ select e.ename,e.HIREDATE, m.ename ,m.HIREDATE from scott.emp e inner join scott
 # 5. 返回员工姓名及其所在的部门名称
 select e.ENAME,d.DNAME
 from scott.emp e
-inner join scott.dept d
-on e.DEPTNO = d.DEPTNO;
+       inner join scott.dept d
+                  on e.DEPTNO = d.DEPTNO;
 # 6. 返回从事 clerk 工作的员工姓名和所在部门名称
 select e.ENAME,d.DNAME
 from scott.emp e
        inner join scott.dept d
-       on e.DEPTNO = d.DEPTNO and e.JOB='clerk';
+                  on e.DEPTNO = d.DEPTNO and e.JOB='clerk';
