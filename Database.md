@@ -92,8 +92,9 @@
 
 8. 登录 Mysql cmd
 
-   * F:\Mysql\mysql\bin>mysql -uroot -p（输入密码）
-     Enter password: ************
+   * F:\Mysql\mysql\bin>mysql -uroot -p
+   
+   （输入密码） Enter password: ************
      Welcome to the MySQL monitor.  Commands end with ; or \g.
      Your MySQL connection id is 2
      Server version: 5.7.25
@@ -131,4 +132,7 @@
       出现一个表格大多数都是utf8mb4，就表示正确
   # 补充
   * delete  from scott.new_emp;只是删除表内数据。并没有删除表
+  * drop table scott.new_emp;    这个是删除表格
   * settings—>editor—>file types 可以设置当前文本类型下的文件，可以删除和添加。（例，曾经设置一个表名叫0309_housework.sql的文件，不能运行，就是在这里找到txt文件，再移除就可以了）  
+  * 格式化：ctrl+alt+L
+  * substr(字符串,截取开始位置,截取长度) //返回截取的字
