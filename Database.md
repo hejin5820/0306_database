@@ -129,3 +129,6 @@
     * mysql> show variables like 'coll%';
 
       出现一个表格大多数都是utf8mb4，就表示正确
+  # 补充
+  * delete  from scott.new_emp;只是删除表内数据。并没有删除表
+  * settings—>editor—>file types 可以设置当前文本类型下的文件，可以删除和添加。（例，曾经设置一个表名叫0309_housework.sql的文件，不能运行，就是在这里找到txt文件，再移除就可以了）  
