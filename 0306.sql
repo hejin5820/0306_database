@@ -6,11 +6,11 @@ show tables from  db_school;
 # use db_school;使用这句话后，下面一行的db_school,school,不用写.之前的。一般不推荐用
 create table db_school.student(
   -- 字段名 数据类型 【数据的范围】 [约束] 注释，
-                                sno varchar(255) unique comment '学号',
-                                name varchar(10) comment '学生姓名',
-                                age int(2) comment '年龄',
-                                height double(3,2) comment '身高',
-                                dob date comment '出生年月日 Date of Birth'
+  sno varchar(255) unique comment '学号',
+  name varchar(10) comment '学生姓名',
+  age int(2) comment '年龄',
+  height double(3,2) comment '身高',
+  dob date comment '出生年月日 Date of Birth'
 ) comment '学生表';
 
 show full columns from db_school.student;# 可以展示数据的含义，例如dob的含义
