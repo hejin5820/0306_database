@@ -130,6 +130,49 @@
     * mysql> show variables like 'coll%';
 
       出现一个表格大多数都是utf8mb4，就表示正确
+      
+    *备份一个数据库
+    
+        F:\Mysql\mysql\bin>mysqldump -B -u root -p db_ip >e:/ip.sql
+        Enter password: ******
+
+        F:\Mysql\mysql\bin>mysql -uroot -p
+        Enter password: ******
+        
+        删除数据库
+        mysql> drop database db_ip;
+        Query OK, 1 row affected (0.67 sec)
+        显示所有数据库
+        mysql> show databases;
+        +--------------------+
+        | Database           |
+        +--------------------+
+        | information_schema |
+        | db_csdn            |
+        | db_school          |
+        | mysql              |
+        | performance_schema |
+        | scott              |
+        | sys                |
+        +--------------------+
+        7 rows in set (0.00 sec)
+        导入数据，通过备份的
+        mysql> source e:/ip.sql
+        导入成功
+        mysql> show databases;
+        +--------------------+
+        | Database           |
+        +--------------------+
+        | information_schema |
+        | db_csdn            |
+        | db_ip              |
+        | db_school          |
+        | mysql              |
+        | performance_schema |
+        | scott              |
+        | sys                |
+        +--------------------+
+        8 rows in set (0.00 sec)
   # 补充
   * delete  from scott.new_emp;只是删除表内数据。并没有删除表
   * drop table scott.new_emp;    这个是删除表格

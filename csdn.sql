@@ -26,6 +26,7 @@ create index ind_password on db_csdn.user(password);-- 442368 kb
 create index ind_username on db_csdn.user(username);
 create index ind_email on db_csdn.user(email);
 show index from db_csdn.user;
+-- 删除索引
 drop index ind_password on db_csdn.user;
 drop index ind_username on db_csdn.user;
 drop index ind_email on db_csdn.user;
@@ -51,4 +52,4 @@ limit 100 offset 0;
 -- 密码可能是生日的数据
 select password
 from db_csdn.user
-where password rlike '';-- rlike 正则表达式
+where password regexp '^\198[0-9]{1}[0-9]{1,2}[0-9]{1,2}$';-- rlike 正则表达式
