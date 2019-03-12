@@ -36,8 +36,10 @@ select substr(ename,1,3) from scott.emp;
 select translate(ename,'A','a') from emp;
 
 update scott.emp
-set ENAME='%a%'
-where ENAME='%A%';
+set ENAME='%A%'
+where ENAME='%a%';
+
+select * from scott.emp;
 # 16. 将员工的雇佣日期拖后 10 年
 # 17. 返回员工的详细信息并按姓名排序
 select * from scott.emp order by ename asc;
