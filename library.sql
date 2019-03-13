@@ -7,10 +7,12 @@ create table db_l.user
 (
   id       int auto_increment primary key comment '序号',
   username varchar(255) not null comment '管理员用户名',
-  password varchar(255) not null comment '管理员密码'
+  password varchar(255) not null comment '管理员密码',
+  role     int(3)       not null default 0 comment '0代表学生，1代表管理员'
 ) comment 'user table';
 -- add admin
-insert into db_l.user value (null, 'admin', md5('1123'));
+insert into db_l.user value  (null,'admin', md5('1123'),1);
+
 -- admin sign in 'xxx' ,'yyy'
 select *
 from db_l.user
