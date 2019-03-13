@@ -1,5 +1,6 @@
 drop database if exists db_a;
 create database db_a;
+show databases ;
 
 drop table if exists db_a.user;
 create table db_a.user
