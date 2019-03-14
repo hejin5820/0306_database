@@ -179,13 +179,16 @@
   * settings—>editor—>file types 可以设置当前文本类型下的文件，可以删除和添加。（例，曾经设置一个表名叫0309_housework.sql的文件，不能运行，就是在这里找到txt文件，再移除就可以了）  
   * 格式化：ctrl+alt+L
   * substr(字符串,截取开始位置,截取长度) //返回截取的字
+  * 如需从 Company" 列中仅选取唯一不同的值，我们需要使用 SELECT DISTINCT 语句：
   
+  * SELECT DISTINCT Company FROM Orders 
   
   # 数据库的设计-范式
   >  NF 规范的形式
   
     1. 1NF：没有复义的列  '添加列'
     2. 2NF：每行可以区分  '加主键'
-    3. 3NF：没有冗余的列（多余） '添加表'
+    3. 3NF：没有冗余的列（多余） '添加一个新的表'
   
   > 3NF: 表中不能含有其他表内的非主关键字值
+  
